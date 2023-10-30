@@ -1,8 +1,17 @@
 #!/usr/bin/node
+
+const fs = require('fs');
+
 const request = require('request');
-const f = require('fs');
 
 const url = process.argv[2];
-const FileName = process.argv[3];
 
-request.get(url).pipe(f.createWriteStream(FileName));
+const arg2 = process.argv[3];
+
+request(url, (error, response, body) => {
+    if (!error && response.statusCode == 200) {
+        fs.writeFile(arg2, body, (err) => {
+            if (err) throw err;
+        })
+    }
+})

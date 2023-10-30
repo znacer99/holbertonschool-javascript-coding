@@ -10,5 +10,5 @@ request(url, (error, response, body) => {
   if (error) {
   console.log(error.message);
   }
-  {  console.log(`code: ${response.statusCode}`);
+    console.log(`code: ${response.statusCode}`);
 })

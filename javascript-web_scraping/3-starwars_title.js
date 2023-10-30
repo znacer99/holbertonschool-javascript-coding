@@ -11,7 +11,7 @@ const resultUrl = url + id;
 request(resultUrl, (error, response, body) => {
   if (error) {
     console.log(error);
-    }
+  }
   else {
     const data = JSON.parse(body);
     console.log(data.title);
